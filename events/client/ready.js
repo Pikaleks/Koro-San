@@ -8,7 +8,7 @@ module.exports = client => {
   }catch{ /* */ }
 
   try{
-    client.user.setActivity(`${client.guilds.cache.size} users`, { type: "WATCHING" });
+    client.user.setActivity(`${client.guilds.cache.size} guilds`, { type: "WATCHING" });
   }catch (e) {
       console.log(String(e.stack));
   }
