@@ -15,15 +15,15 @@ module.exports = {
         if(!member) return message.channel.send("You need to give me member to kick.");
         if(!message.channel.permissionsFor(message.author).has("KICK_MEMBERS")) return message.channel.send("You don't have enough permissions to use this command.");
         if(!message.channel.permissionsFor(client.user).has("KICK_MEMBERS")) return message.channel.send("I don't have enough permissions to ban.");
-        if(member.roles.highest.position >= message.member.roles.highest.position) return message.channel.send("You can't kick this member.");
-        if(!member.kickable) return message.reply("I can't kick this member...");
+        if(message.guild.member(member).roles.highest.position >= message.member.roles.highest.position) return message.channel.send("You can't kick this member.");
+        if(!message.guild.member(member).kickable) return message.reply("I can't kick this member...");
         let reason = args.slice(1).join(' ') || "no reason";
-        member.kick().then(() => {
+        message.guild.member(member).kick().then(() => {
 
         message.channel.send(new MessageEmbed()
             .setColor(ee.color)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`**${member.user.username}** kicked !`)
+            .setTitle(`**${message.guild.member(member).user.username}** kicked !`)
             .setDescription(`Reason : **${reason}**`)
         )
     })
