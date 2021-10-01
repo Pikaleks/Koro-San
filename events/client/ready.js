@@ -20,7 +20,9 @@ module.exports = client => {
   let nombre = 0;
   setInterval(()=>{
     nombre = nombre + 1;
-    if (nombre === 3) return nombre = 0;
+    if (nombre === 3) {
+      nombre = 1;
+    }
     if (nombre === 1) {
       client.user.setActivity(`${client.guilds.cache.size} servers`, { type : "WATCHING"});
     }
