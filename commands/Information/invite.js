@@ -12,7 +12,7 @@ module.exports = {
     try{
       message.author.send(`Orayo !\nYou can add me with this link :3\nhttps://discord.com/oauth2/authorize?client_id=881335414957441055&permissions=1610083447&scope=bot`)
     } catch (e) {
-        console.log(String(e.stack).bgRed)
+        console.log(String(e.stack))
         return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.wrongicon)

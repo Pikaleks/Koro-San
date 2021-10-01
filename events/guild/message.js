@@ -89,7 +89,7 @@ module.exports = async (client, message) => {
         //run the command with the parameters:  client, message, args, user, text, prefix,
         command.run(client, message, args, message.member, args.join(" "), prefix);
       }catch (e) {
-        console.log(String(e.stack).red)
+        console.log(String(e.stack))
         return message.channel.send(new Discord.MessageEmbed()
           .setColor(ee.wrongcolor)
           .setFooter(ee.footertext, ee.footericon)

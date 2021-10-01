@@ -24,7 +24,7 @@ module.exports = {
             console.log(output)
         })
     } catch (e) {
-        console.log(String(e.stack).bgRed)
+        console.log(String(e.stack))
         return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.wrongicon)

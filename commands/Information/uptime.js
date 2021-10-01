@@ -17,7 +17,7 @@ module.exports = {
         .setTitle(`:white_check_mark: **${client.user.username}** is online since:\n ${duration(client.uptime)} !`)
       );
     } catch (e) {
-        console.log(String(e.stack).bgRed)
+        console.log(String(e.stack))
         return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.wrongicon)

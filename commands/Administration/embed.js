@@ -27,7 +27,7 @@ module.exports = {
         .setDescription(desc ? desc : "")
       )
     } catch (e) {
-        console.log(String(e.stack).bgRed)
+        console.log(String(e.stack))
         return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.wrongicon)

@@ -13,7 +13,7 @@ module.exports = {
       if (!target) target = message.member;
       return target;
     }catch (e){
-      console.log(String(e.stack).bgRed)
+      console.log(String(e.stack))
     }
   },
   //changeging the duration from ms to a date
@@ -35,7 +35,7 @@ module.exports = {
         time: time
       }).then((collected) => collected.first() && collected.first().emoji.name);
     }catch (e){
-      console.log(String(e.stack).bgRed)
+      console.log(String(e.stack))
     }
   },
   //Function to wait some time
@@ -47,7 +47,7 @@ module.exports = {
         }, delayInms);
       });
     }catch (e){
-      console.log(String(e.stack).bgRed)
+      console.log(String(e.stack))
     }
   },
   //randomnumber between 0 and x
@@ -55,7 +55,7 @@ module.exports = {
     try{
       return Math.floor(Math.random() * Math.floor(max));
     }catch (e){
-      console.log(String(e.stack).bgRed)
+      console.log(String(e.stack))
     }
   },
   //random number between y and x
@@ -63,7 +63,7 @@ module.exports = {
     try{
       return Math.floor(Math.random() * Math.floor((max - min) + min));
     }catch (e){
-      console.log(String(e.stack).bgRed)
+      console.log(String(e.stack))
     }
   },
   //function for creating a bar
@@ -73,7 +73,7 @@ module.exports = {
       if (!String(bar).includes("🔶")) return `**[🔶${line.repeat(size - 1)}]**\n**00:00:00 / 00:00:00**`;
       return `**[${bar[0]}]**\n**${new Date(currenttime).toISOString().substr(11, 8)+" / "+(maxtime==0?" ◉ LIVE":new Date(maxtime).toISOString().substr(11, 8))}**`;
     }catch (e) {
-      console.log(String(e.stack).bgRed)
+      console.log(String(e.stack))
     }
   },
   format: function(millis) {
@@ -84,14 +84,14 @@ module.exports = {
       if (h < 1) return (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Seconds";
       else return (h < 10 ? "0" : "") + h + ":" + (m < 10 ? "0" : "") + m + ":" + (s < 10 ? "0" : "") + s + " | " + (Math.floor(millis / 1000)) + " Seconds";
     }catch (e){
-      console.log(String(e.stack).bgRed)
+      console.log(String(e.stack))
     }
   },
   escapeRegex: function(str) {
     try{
       return str.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
     }catch (e){
-      console.log(String(e.stack).bgRed)
+      console.log(String(e.stack))
     }
   },
   arrayMove: function(array, from, to) {
@@ -105,7 +105,7 @@ module.exports = {
       }
       return array;
     }catch (e){
-      console.log(String(e.stack).bgRed)
+      console.log(String(e.stack))
     }
   }
 }

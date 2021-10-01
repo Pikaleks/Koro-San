@@ -46,7 +46,7 @@ module.exports = {
     let question = args.slice(0).join(" ");
       message.channel.send(replies[result])
     } catch (e) {
-        console.log(String(e.stack).bgRed)
+        console.log(String(e.stack))
         return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.wrongicon)

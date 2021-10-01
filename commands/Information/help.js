@@ -59,12 +59,12 @@ module.exports = {
               embed.addField(`\u200b`, `${result[2].join("\n") ? result[2].join("\n") : "\u200b"}`, true);
             }
           } catch (e) {
-              console.log(String(e.stack).red);
+              console.log(String(e.stack));
           }
           message.channel.send(embed);
       }
     } catch (e) {
-        console.log(String(e.stack).bgRed)
+        console.log(String(e.stack))
         return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.wrongicon)
