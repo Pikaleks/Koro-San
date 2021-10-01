@@ -2,7 +2,9 @@
 const config = require("../../botconfig/config.json")
 module.exports = client => {
   try{
-    console.log("Ready")
+    client.guilds.cache.forEach(guild => {
+      console.log(`${guild.name} | ${guild.id}`);
+    })
   }catch{ /* */ }
 
   try{
