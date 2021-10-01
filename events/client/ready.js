@@ -28,6 +28,6 @@ module.exports = client => {
       client.user.setActivity(`${count} users`, { type : "WATCHING"})
     }
     console.log(nombre)
-  }, 5000)
+  }, 600000)
 }
 
