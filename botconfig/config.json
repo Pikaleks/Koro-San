@@ -1,4 +1,5 @@
 {
   "prefix": "+",
-  "defaultCommandCooldown" : 1
+  "defaultCommandCooldown" : 1,
+  "bugchannelid" : "893526844735889488"
 }
