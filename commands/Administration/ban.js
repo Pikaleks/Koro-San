@@ -14,16 +14,16 @@ module.exports = {
         if(!member) return message.channel.send("You need to give me member to ban.");
         if(!message.channel.permissionsFor(message.author).has("BAN_MEMBERS")) return message.channel.send("You don't have enough permissions to use this command.");
         if(!message.channel.permissionsFor(client.user).has("BAN_MEMBERS")) return message.channel.send("I don't have enough permissions to ban.");
-        if(member.roles.highest.position >= message.member.roles.highest.position) return message.channel.send("You can't ban this member.");
-        if(!member.bannable) return message.channel.send("I can't ban this member.");
+        if(message.guild.member(member).roles.highest.position >= message.member.roles.highest.position) return message.channel.send("You can't ban this member.");
+        if(!message.guild.member(member).bannable) return message.channel.send("I can't ban this member.");
 
         let reason = args.slice(1).join(' ') || "no reason";
-        member.ban().then(() => {
+        message.guild.member(member).ban().then(() => {
 
         message.channel.send(new MessageEmbed()
             .setColor(ee.color)
             .setFooter(ee.footertext, ee.footericon)
-            .setTitle(`**${member.user.username}** banned !`)
+            .setTitle(`**${message.guild.member(member).user.username}** banned !`)
             .setDescription(`Reason : **${reason}**`)
         )
     })
