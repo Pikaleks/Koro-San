@@ -74,18 +74,6 @@ module.exports = async (client, message) => {
             .setDescription(`You need these Permissions: \`${command.memberpermissions.join("`, ``")}\``)
           )
         }
-        //if the Bot has not enough permissions return error
-        let required_perms = ["ADD_REACTIONS","PRIORITY_SPEAKER","VIEW_CHANNEL","SEND_MESSAGES",
-        "EMBED_LINKS","CONNECT","SPEAK","DEAFEN_MEMBERS"]
-        if(!message.guild.me.hasPermission(required_perms)){
-          try{ message.react("❌"); }catch{}
-          return message.channel.send(new Discord.MessageEmbed()
-            .setColor(ee.wrongcolor)
-            .setFooter(ee.footertext, ee.wrongicon)
-            .setTitle("❌ Error | I don't have enough Permissions!")
-            .setDescription("Please give me just `ADMINISTRATOR`, because I need it to delete Messages, Create Channel and execute all Admin Commands.\n If you don't want to give me them, then those are the exact Permissions which I need: \n> `" + required_perms.join("`, `") +"`")
-          )
-        }
         //run the command with the parameters:  client, message, args, user, text, prefix,
         command.run(client, message, args, message.member, args.join(" "), prefix);
       }catch (e) {
@@ -110,16 +98,7 @@ module.exports = async (client, message) => {
     new MessageEmbed()
     .setColor("RED")
     .setTitle(`❌ ERROR | An error occurred`)
-    .setDescription(`\`\`\`${e.stack}\`\`\``)
+    .setDescription(`If this message persists please bug report the command.`)
 );
   }
-  /**
-    * @INFO
-    * Bot Coded by Tomato#6966 | https://github.com/Tomato6966/Discord-Js-Handler-Template
-    * @INFO
-    * Work for Milrato Development | https://milrato.eu
-    * @INFO
-    * Please mention Him / Milrato Development, when using this Code!
-    * @INFO
-  */
 }

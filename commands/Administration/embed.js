@@ -10,6 +10,7 @@ module.exports = {
     description: "Resends a message from you as an Embed",
     run: async (client, message, args, user, text, prefix) => {
     try{
+      if(!message.channel.permissionsFor(client.user).has("MANAGE_MESSAGES")) return message.channel.send("I can't delete messages.");
       if(!args[0])
         return message.channel.send(new MessageEmbed()
             .setColor(ee.wrongcolor)
@@ -32,9 +33,8 @@ module.exports = {
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.wrongicon)
             .setTitle(`❌ ERROR | An error occurred`)
-            .setDescription(`\`\`\`${e.stack}\`\`\``)
+            .setDescription(`If this message persists please bug report the command.`)
         );
     }
   }
 }
-/** Template by Tomato#6966 | https://github.com/Tomato6966/Discord-Js-Handler-Template */

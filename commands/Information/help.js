@@ -69,10 +69,8 @@ module.exports = {
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.wrongicon)
             .setTitle(`❌ ERROR | An error occurred`)
-            .setDescription(`\`\`\`${e.stack}\`\`\``)
+            .setDescription(`If this message persists please bug report the command.`)
         );
     }
   }
 }
-
-/** Template by Tomato#6966 | ://github.com/Tomato6966/Discord-Js-Handler-Template */

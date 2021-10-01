@@ -32,7 +32,7 @@ module.exports = {
             .setColor(ee.wrongcolor)
             .setFooter(ee.footertext, ee.wrongicon)
             .setTitle(`❌ ERROR | An error occurred`)
-            .setDescription(`\`\`\`${e.stack}\`\`\``)
+            .setDescription(`If this message persists please bug report the command.`)
         );
     }
   }
