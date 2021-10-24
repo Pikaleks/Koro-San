@@ -29,7 +29,6 @@ module.exports = client => {
     if (nombre === 2){
       client.user.setActivity(`${count} users`, { type : "WATCHING"})
     }
-    console.log(nombre)
   }, 600000)
 }
 
