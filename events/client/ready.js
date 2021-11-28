@@ -1,3 +1,4 @@
+const config = require("../../botconfig/config.json")
 module.exports = client => {
   try{
     client.guilds.cache.forEach(guild => {
@@ -10,10 +11,23 @@ module.exports = client => {
 
 })
   try{
-    client.user.setActivity(`Koro-San >~<`, { type: "WATCHING" });
+    client.user.setActivity(`${count} users`, { type: "WATCHING" });
   }catch (e) {
       console.log(String(e.stack));
   }
   //Change status each 10 minutes
+  let nombre = 0;
+  setInterval(()=>{
+    nombre = nombre + 1;
+    if (nombre === 3) {
+      nombre = 1;
+    }
+    if (nombre === 1) {
+      client.user.setActivity(`${client.guilds.cache.size} servers`, { type : "WATCHING"});
+    }
+    if (nombre === 2){
+      client.user.setActivity(`${count} users`, { type : "WATCHING"})
+    }
+  }, 600000)
 }
 
