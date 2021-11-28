@@ -10,6 +10,7 @@ module.exports = {
     description: "Resends a message from you as an Embed",
     run: async (client, message, args, user, text, prefix) => {
     try{
+      if(!message.channel.permissionsFor(message.author).has("MANAGE_MESSAGES")) return message.channel.send("You don't have enough permissions to use this command.");
       if(!message.channel.permissionsFor(client.user).has("MANAGE_MESSAGES")) return message.channel.send("I can't delete messages.");
       if(!args[0])
         return message.channel.send(new MessageEmbed()

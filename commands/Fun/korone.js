@@ -5,10 +5,9 @@ const ee = require("../../botconfig/embed.json");
 module.exports = {
     name: "korone",
     category: "Fun",
-    aliases: [],
     cooldown: 2,
     usage: "korone",
-    description: "Gives a random koorone gif.",
+    description: "Gives a random korone gif.",
     run: async (client, message, args, user, text, prefix) => {
     try{
       const URL = encodeURI(`https://api.tenor.com/v1/random?q=inugami korone&key=${process.env.tenor}&limit=1`)

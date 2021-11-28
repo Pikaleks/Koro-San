@@ -4,12 +4,12 @@ const ee = require("../../botconfig/embed.json");
 module.exports = {
     name: "say",
     category: "Administration",
-    aliases: [],
     cooldown: 2,
     usage: "say <TEXT>",
     description: "Resends your Text",
     run: async (client, message, args, user, text, prefix) => {
     try{
+      if(!message.channel.permissionsFor(message.author).has("MANAGE_MESSAGES")) return message.channel.send("You don't have enough permissions to use this command.");
       if(!message.channel.permissionsFor(client.user).has("MANAGE_MESSAGES")) return message.channel.send("I can't delete messages.");
       if(!args[0])
         return message.channel.send(new MessageEmbed()
