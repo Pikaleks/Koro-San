@@ -10,13 +10,16 @@
   "author": "Alex",
   "license": "ISC",
   "dependencies": {
+    "anime-vostfr": "^1.2.2",
     "ascii-table": "0.0.9",
     "axios": "^0.21.4",
     "canvas": "^2.8.0",
     "discord.js": "^12.5.1",
     "dotenv": "^10.0.0",
+    "hololive-wrappers": "^3.0.0",
     "mongoose": "^6.0.8",
     "node-superfetch": "^0.2.3",
+    "node-twitch": "^0.4.5",
     "path": "^0.12.7",
     "vtuber-wiki": "^1.1.5"
   },
