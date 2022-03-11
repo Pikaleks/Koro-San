@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "anime-vostfr": "^1.2.2",
-    "ascii-table": "0.0.9",
     "axios": "^0.21.4",
     "canvas": "^2.8.0",
     "discord.js": "^12.5.1",
@@ -24,7 +23,6 @@
     "vtuber-wiki": "^1.1.5"
   },
   "devDependencies": {
-    "ascii-table": "0.0.9",
     "colors": "^1.4.0"
   }
 }
