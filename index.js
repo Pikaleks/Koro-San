@@ -4,7 +4,7 @@ const fs = require("fs"); //this package is for reading files and getting their 
 const mongoose = require('mongoose');
 const config = require('./botconfig/config.json')
 const prefix = config.prefix
-mongoose.connect('mongodb+srv://admin:AzLADSp2cgA6FRUb@koronechan.m0ilc.mongodb.net/KoroneChan?retryWrites=true&w=majority', {
+mongoose.connect(process.env.mongo, {
     useUnifiedTopology: true,
     useNewUrlParser: true,
 }).then(console.log('Connected to mongodb'))
@@ -157,4 +157,4 @@ client.cooldowns = new Discord.Collection(); //an collection for cooldown comman
     require(`./handlers/${handler}`)(client);
 });
 //login into the bot
-client.login("ODM4MzYyMzEzOTk5NTE1Njcw.YI5_vw.dfevbvndEE-Bqzb2ghkqLb4JLQA");
+client.login(process.env.token);
