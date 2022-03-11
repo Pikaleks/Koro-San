@@ -28,7 +28,7 @@ module.exports = client => {
             titletwitch: `${title.body}`
           })
 
-          await client.channels.cache.get("837027849931194432").send({ content: `<@&951964510867046410>\n${user[i]} est en LIVE BANGER!\nhttps://www.twitch.tv/${user[i]}`})
+          await client.channels.cache.get("951968181851934830").send({ content: `<@&903297978188566558>\n${user[i]} est en LIVE BANGER!\nhttps://www.twitch.tv/${user[i]}`})
 
           data.save()
         }
