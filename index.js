@@ -153,7 +153,7 @@ client.categories = fs.readdirSync("./commands/"); //categories
 client.cooldowns = new Discord.Collection(); //an collection for cooldown commands of each user
 
 //Loading files, with the client variable like Command Handler, Event Handler, ...
-["commands", "events"].forEach(handler => {
+["command", "events"].forEach(handler => {
     require(`./${handler}`)(client);
 });
 //login into the bot
