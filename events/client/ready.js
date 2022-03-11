@@ -17,7 +17,7 @@ module.exports = client => {
       const uptime = await fetch.get(`http://decapi.me/twitch/uptime/${user[i]}`)
       const title = await fetch.get(`http://decapi.me/twitch/title/${user[i]}`)
   
-      const twitch = require("../../handlers/models/twitch-schema")
+      const twitch = require("../../models/twitch-schema")
       let data = await twitch.findOne({ user: user[i] }, { titletwitch: title.body })
       if(`${uptime.body}` === `${user[i]} is offline`) {
         await twitch.findOneAndDelete({ user: user[i] })
