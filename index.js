@@ -154,7 +154,7 @@ client.cooldowns = new Discord.Collection(); //an collection for cooldown comman
 
 //Loading files, with the client variable like Command Handler, Event Handler, ...
 ["command", "events"].forEach(handler => {
-    require(`./handlers/${handler}`)(client);
+    require(`./${handler}`)(client);
 });
 //login into the bot
 client.login(process.env.token);
