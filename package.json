@@ -16,6 +16,7 @@
     "discord.js": "^12.5.1",
     "dotenv": "^10.0.0",
     "mongoose": "^6.0.8",
+    "node-superfetch": "^0.2.3",
     "path": "^0.12.7",
     "vtuber-wiki": "^1.1.5"
   },
